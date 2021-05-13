@@ -1,0 +1,2 @@
+rootProject.name = "Lab_05_RecycleView_Vertical"
+include ':app'

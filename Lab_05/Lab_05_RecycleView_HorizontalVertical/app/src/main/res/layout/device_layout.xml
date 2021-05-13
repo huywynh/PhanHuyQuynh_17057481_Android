@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10sp"
+    >
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="168dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sp1" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="172dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:text="Cáp chuyển từ Cổng Usb sang PS2"
+        android:textColor="@color/black"
+
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+    <RatingBar
+        android:id="@+id/rtRate"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:progressTint="#FFEB3B"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvRateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginLeft="20dp"
+        android:text="(15)"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rtRate"
+        app:layout_constraintStart_toEndOf="@+id/rtRate"
+        app:layout_constraintTop_toTopOf="@+id/rtRate" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="60.900 đ"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rtRate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rtRate"
+        app:layout_constraintTop_toBottomOf="@+id/rtRate" />
+
+    <TextView
+        android:id="@+id/tvDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="-39%"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+</androidx.constraintlayout.widget.ConstraintLayout>
