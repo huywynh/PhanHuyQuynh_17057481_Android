@@ -1,0 +1,2 @@
+rootProject.name = "Lab_06_Bai_4_Room_DB_Basic"
+include ':app'
