@@ -1,0 +1,2 @@
+rootProject.name = "Bai_2 Room_DB_Custome"
+include ':app'
