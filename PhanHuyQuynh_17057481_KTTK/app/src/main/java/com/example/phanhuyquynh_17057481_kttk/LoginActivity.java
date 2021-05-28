@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_login);
+
+        Toast.makeText(this, "dasdasd", Toast.LENGTH_SHORT).show();
 
         etEmail = findViewById(R.id.editTextTextEmailAddress);
         etPassword = findViewById(R.id.editTextNumberPassword);

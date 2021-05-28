@@ -5,16 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -28,18 +32,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String apiUrl = "https://60b08e501f26610017ffe64f.mockapi.io/api/users";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, apiUrl, null, response -> {
+        StringRequest request = new StringRequest(Request.Method.GET, apiUrl, response -> {
             if (response != null) {
-                
-                adapter = new UserAdapter(new ArrayList<>());
-                rvUsers = findViewById(R.id.rvUsers);
-                rvUsers.setAdapter(adapter);
+                UserList list = gson.fromJson(response, UserList.class);
+                if (list != null) {
+                    adapter = new UserAdapter(list.getUsers());
+                    rvUsers = findViewById(R.id.rvUsers);
+                    rvUsers.setAdapter(adapter);
+                }
             }
         }, error -> {
             Log.d(TAG, error.toString());
         });
-
-
-
     }
 }

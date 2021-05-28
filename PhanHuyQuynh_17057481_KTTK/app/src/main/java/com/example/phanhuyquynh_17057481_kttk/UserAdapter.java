@@ -34,6 +34,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return users != null ? users.size() : 0;
     }
 
+    public List<User> getItems() {
+        return users;
+    }
+
     public class UserViewHolder extends RecyclerView.ViewHolder {
         private TextView tvName, tvAge;
 
